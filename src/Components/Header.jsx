@@ -3,7 +3,7 @@ import DateTime from "./DateTime";
 
 const Header = () => {
   return (
-    <div className="flex flex-col items-center py-5 border">
+    <div className="flex flex-col items-center py-5 shadow">
       <img src={logo} alt="" />
       <h3>Journalism Without Fear of Favour</h3>
       <DateTime></DateTime>

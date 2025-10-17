@@ -1,6 +1,7 @@
 import React from 'react';
 import { Outlet } from 'react-router';
 import Header from '../Components/Header';
+import Marque from '../Components/Marque';
 
 const HomeLayout = () => {
     return (
@@ -8,6 +9,7 @@ const HomeLayout = () => {
             <header>
                 <Header></Header>
             </header>
+            <Marque></Marque>
             <main>
                 <section className="left-content"></section>
                 <section className="main-content">
