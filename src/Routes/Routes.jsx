@@ -3,6 +3,7 @@ import { createBrowserRouter } from 'react-router';
 import HomeLayout from '../Layouts/HomeLayout';
 import Home from '../Components/Home';
 import CategoryNews from '../Components/CategoryNews';
+import NewsDetails from '../Components/NewsDetails';
 
 const Routes = createBrowserRouter([
     {
@@ -26,9 +27,12 @@ const Routes = createBrowserRouter([
         element: <h2>Auth Layout</h2>
     },
     {
-        path:"/news", 
-        element: <h2>News Layout</h2>
+        path:"/news-details/:id", 
+        element: <NewsDetails></NewsDetails>,
+        hydrateFallbackElement:<span>Loading.....</span>,
+        loader:()=>fetch('/news.json'),
     },
+
     {
         path:"*", 
         element: <h2>Error Layout</h2>
