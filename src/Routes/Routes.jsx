@@ -1,11 +1,25 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router';
 import HomeLayout from '../Layouts/HomeLayout';
+import Home from '../Components/Home';
+import CategoryNews from '../Components/CategoryNews';
 
 const Routes = createBrowserRouter([
     {
         path:"/", 
-        element: <HomeLayout></HomeLayout>
+        element: <HomeLayout></HomeLayout>,
+        children:[
+            {
+                path:"/",
+                element:<Home></Home>
+            },
+            {
+                path:"/category/:id",
+                element:<CategoryNews></CategoryNews>,
+                hydrateFallbackElement:<span>Loading.....</span>,
+                loader:()=>fetch('/news.json'),
+            }
+        ]
     },
     {
         path:"/auth", 
